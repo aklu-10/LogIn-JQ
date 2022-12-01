@@ -1,0 +1,179 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+input::-ms-reveal{
+display: none;
+}
+
+body
+{
+    min-height: 100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-image: linear-gradient(skyblue,purple);
+}
+
+form
+{
+    width:400px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    padding: 30px;
+}
+
+form h2
+{
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+form .form-item
+{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+form .form-item label
+{
+    font-size: .9rem;
+}
+
+
+form .form-item input
+{
+    margin: 20px 0 ;
+    padding: 8px;
+    border:none;
+    border-bottom:1px solid rgb(222, 220, 220);
+    background-color: transparent;
+    position: relative;
+    padding-left: 20px;
+}
+
+form .form-item input:focus
+{
+    outline:none;
+}
+
+form .form-item input:focus + i
+{
+    color:gray;
+}
+
+form .form-item i.fa-eye,
+form .form-item i.fa-eye-slash
+{
+    position: absolute;
+    right:0;
+    color:darkgray;
+}
+
+
+
+
+
+
+
+form .form-item i
+{
+    color:rgb(222, 220, 220);
+    position: absolute;
+    bottom:30%;
+}
+
+form .form-item p
+{
+    position: absolute;    
+    bottom: 5%;
+    color:red;
+    font-size: .8rem;
+    display: none;
+}
+
+form .form-bottom
+{
+    display: flex;
+    flex-direction: column;
+}
+
+form .forgotpass
+{
+    color:gray;
+    font-weight: 100;
+    font-size: .9rem;
+    margin: 20px 0;
+    align-self: flex-end;
+    cursor: pointer;
+    user-select: none;
+}
+
+form .login
+{
+    padding: 10px;
+    border-radius: 50px;
+    border:none;
+    background-image: linear-gradient(90deg,skyblue,purple);
+    color:white;
+    font-weight: 600;
+}
+
+form .signup-links
+{
+    margin: 20px 0;
+    padding: 20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+}
+
+form .signup-links p
+{
+    font-size: .8rem;
+    color:gray;
+}
+
+
+
+form .signup-links .social_links i
+{
+    font-size: 1.4rem;
+    margin: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+form .signup-links .social_links i.fa-facebook
+{
+    color:blue;
+}
+
+form .signup-links .social_links i.fa-twitter
+{
+    color:blue;
+}
+
+form .signup-links .social_links i.fa-google
+{
+    color:blue;
+}
+
+
+@media (max-width:500px)
+{
+    form
+    {
+        width: 98%;
+    }
+    
+}
+
+

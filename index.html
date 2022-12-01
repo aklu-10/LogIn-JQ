@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+
+</body>
+
+
+    <form action="">
+
+        <h2>Login</h2>
+
+        <div class="form-item">
+            <label for="username">Username</label>
+            <input required id="username" type="text" placeholder="Type your username" >
+            <i class="fa-solid fa-user"></i>
+            <p class="usernameError" >Error</p>
+        </div>
+
+        <div class="form-item">
+            <label for="password">Password</label>
+            <input required id="password" type="password" placeholder="Type your password">
+            <i class="fa-solid fa-lock"></i>
+            <i class="fa-solid fa-eye"></i>
+            <p class="passwordError">Error</p>
+
+        </div>
+
+        <div class="form-bottom">
+            <span class="forgotpass">Forgot password</span>
+
+            <button class="login" type="submit">LOGIN</button>
+
+            <div class="signup-links">
+
+                <p>or SignUp using</p>
+
+                <div class="social_links">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-google"></i>                    
+                </div>
+
+            </div>
+        </div>
+
+    </form>
+
+
+
+
+    <script>
+        
+
+        $(document).ready(()=>
+        {
+            let password=$("#password");
+            let username=$("#username");
+
+            let usercheck= /^[a-zA-Z]{4,40}$/;
+            let passwordcheck=/^[0-9A-Za-z]{8,100}$/;
+
+            $(username).keydown(function()
+            {
+                if(usercheck.test($(this).val()))
+                {
+                    $(".usernameError").css("display","none");
+                }
+                else
+                {
+                    $(".usernameError").css("display","initial");
+                    $(".usernameError").text("password should be more than 8 Characters");
+
+                }
+
+               
+
+            })
+
+
+            $(password).keydown(function()
+            {
+                if(passwordcheck.test($(this).val()))
+                {
+                    $(".passwordError").css("display","none");
+                }
+                else
+                {
+                    $(".passwordError").css("display","initial");
+                    $(".passwordError").text("Username should be more than 4 Characters");
+
+                }
+
+
+
+            })
+
+
+            $("i.fa-eye").click(function()
+            {   
+                if($(this).hasClass("fa-eye"))
+                {
+                    $(this).removeClass("fa-eye");
+                    $(this).addClass("fa-eye-slash");
+                    $(password).attr("type","text");
+                }
+                else{
+
+                    $(this).removeClass("fa-eye-slash");
+                    $(this).addClass("fa-eye");
+                    $(password).attr("type","password");
+                }
+
+            })
+
+        })
+
+    </script>
+
+</html>
+
+
